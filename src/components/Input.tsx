@@ -20,17 +20,20 @@ export const Input = () => {
     setValue('');
   };
 
-  const inputChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const inputChangeHandler = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     return setValue(e.currentTarget.value);
   };
 
   return (
     <form onSubmit={submitTodoHandler}>
       <OutlinedInput
+        sx={{ width: '100%' }}
         minRows={30}
         value={value}
         onChange={inputChangeHandler}
-      ></OutlinedInput>
+      />
     </form>
   );
 };

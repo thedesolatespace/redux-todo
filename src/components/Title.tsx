@@ -1,5 +1,9 @@
 import { Typography } from '@mui/material';
 
 export const Title = () => {
-  return <Typography variant="h1"></Typography>;
+  return (
+    <Typography sx={{ textAlign: 'center' }} variant="h1">
+      Todo app
+    </Typography>
+  );
 };
