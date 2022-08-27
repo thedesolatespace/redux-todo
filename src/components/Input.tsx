@@ -29,8 +29,7 @@ export const Input = () => {
   return (
     <form onSubmit={submitTodoHandler}>
       <OutlinedInput
-        sx={{ width: '100%' }}
-        minRows={30}
+        fullWidth={true}
         value={value}
         onChange={inputChangeHandler}
       />
