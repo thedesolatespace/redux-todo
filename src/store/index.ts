@@ -1,22 +1,22 @@
 import { createStore } from 'redux';
-enum ActionTypes {
+export enum ActionTypes {
   ADD = 'ADD',
   DONE = 'DONE',
   DELETE = 'DELETE',
 }
 
 type TodoActions =
-  | { type: ActionTypes.ADD; todo: { id: string; done: boolean; text: string } }
+  | { type: ActionTypes.ADD; todo: TodoListInterface }
   | { type: ActionTypes.DELETE; id: string }
   | { type: ActionTypes.DONE; id: string };
 
-interface TodoList {
+export interface TodoListInterface {
   id: string;
   done: boolean;
   text: string;
 }
 
-const initialState: TodoList[] = [];
+const initialState: TodoListInterface[] = [];
 
 export const todoReducer = (state = initialState, action: TodoActions) => {
   switch (action.type) {
